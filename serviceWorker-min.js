@@ -1,0 +1,1 @@
+const staticDevCoffee="dev-coffee-site-v1",assets=["/","/index.html","/css/style.css","/js/app.js","/images/coffee1.jpg","/images/coffee2.jpg"];self.addEventListener("install",(e=>{e.waitUntil(caches.open(staticDevCoffee).then((e=>{e.addAll(assets)})))})),self.addEventListener("fetch",(e=>{e.respondWith(caches.match(e.request).then((s=>s||fetch(e.request))))}));
